@@ -3,7 +3,7 @@
 # ----------------------------
 
 NAME = MOMENTUM
-ICON = icon.png
+ICON = icon.png	
 DESCRIPTION = "default example for momentum TI84+ CE game dev library"
 COMPRESSED = NO
 
