@@ -8,3 +8,52 @@ gfx for an easy setup.
 ### Newest version:
 Currently, the only thing that I can do with it is to display a motionless sprite. 
 WORK IN PROGRESS: Partial Redraw(moving sprites)  
+
+![Screenshot](screenshot.png)
+
+### How to use:
+TODO: Real wiki
+
+For now, you will have to use this example:
+
+~~~
+// graphics and input
+#include "momentum/graphics.h"
+#include "momentum/input.h"
+// for error message
+#include "momentum/textControl.h"
+
+// sprite images
+#include "gfx/gfx.h"
+
+// include the sprites
+
+/* Main function, called first */
+int main(void)
+{
+    // initializes the screen
+    m_StartRender(global_palette);
+    // create the "Sprite" object
+    Sprite* oiram_sprite = m_CreateSprite(oiram, 100, 100);
+    // if could not malloc mem for sprite
+    if (oiram_sprite == NULL){
+        // error
+        m_EndRender();
+        m_PrintStr("ERROR: No memory left for image!");
+        return 1;
+    }
+    // render sprite
+    m_DrawTransparentSprite(oiram_sprite);
+    // draw it to default buffer
+    m_FlipBuffer(NULL);
+    // exit if newest keypress is clear button
+    while(m_GetNewestKeypress()!=kb_Clear);
+
+    // stop rendering
+    m_EndRender();
+    // free mem used by sprite
+    // IMPORTANT: if not done, mem leak
+    m_DestroySprite(oiram_sprite);
+    return 0;
+}
+~~~
