@@ -10,7 +10,8 @@ converts:
   - name: sprites
     palette: global_palette
     images:
-      - icon.png
+      - ubuntu.png
+      - oiram.png
 
 outputs:
   - type: c
@@ -19,3 +20,4 @@ outputs:
       - global_palette
     converts:
       - sprites
+
