@@ -5,7 +5,8 @@
 void m_ScanKeypresses(){
     kb_Scan();
 }
-
-KEYEVENT m_GetNewestKeypress(){
-    return kb_Data[0];
+// read documentation on https://ce-programming.github.io/toolchain/libraries/keypadc.html
+// for the table of groups
+KEYEVENT* m_GetNewestKeypress(){
+    return kb_Data;
 }
