@@ -6,8 +6,8 @@ Using the toolchain, ce-programming.github.io/toolchain, you will have to add th
 gfx for an easy setup. 
 
 ### Newest version:
-Currently, the only thing that I can do with it is to display a motionless sprite. 
-WORK IN PROGRESS: Partial Redraw(moving sprites)  
+After some revisions, I can now display a moving sprite, controled by the keypad. 
+WORK IN PROGRESS: ERROR HANDLING
 
 ![Screenshot](screenshot.png)
 
