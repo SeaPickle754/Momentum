@@ -1,7 +1,9 @@
 #pragma once
 #include "graphx.h"
 #include "gfx/gfx.h"
-#include <stdlib.h>
+#include <stdlib.h>\
+
+#define M_DEFAULT_FRAMEBUFFER gfx_buffer
 #define M_SPRITE gfx_sprite_t *
 #define M_GRAPHICS_BUFFER gfx_location_t
 
@@ -13,6 +15,15 @@ struct Sprite{
 };
 // this makes it so you can use "Sprite" like a regular type
 typedef struct Sprite Sprite;
+// Prototypes, so we don't get warnings lol
+Sprite* m_CreateSprite(M_SPRITE, float, float, bool, int, int);
+void m_DestroySprite(Sprite*);
+void m_StartRender();
+void m_DrawStaticSprite(Sprite*);
+void m_DrawTransparentSprite(Sprite*);
+void m_MoveSprite(Sprite*, int, int);
+void m_EndRender();
+void m_FlipBuffer(M_GRAPHICS_BUFFER);
 
 // input: gfx image, whether or not to treat it with partial redraw
 // height, width of sprite
@@ -34,7 +45,7 @@ Sprite* m_CreateSprite(M_SPRITE image, float x, float y, bool isDynamic, int hei
         n_sprite->background = background;
     }
     else{
-        n_sprite->background == NULL;
+        n_sprite->background = NULL;
     }
     // WARNING: MAY BE BUG HERE
     gfx_GetSprite(n_sprite->background, n_sprite->x, n_sprite->y);
@@ -83,10 +94,5 @@ void m_DrawTransparentSprite(Sprite* sprite){
 Arguments:
 *Optional: "buffer" - the buffer to flip, if null is provided gfx_buffer*/
 void m_FlipBuffer(M_GRAPHICS_BUFFER buffer){
-    if (buffer == NULL){   
-        gfx_BlitBuffer();
-    }
-    else{
         gfx_Blit(buffer);
-    }
 }

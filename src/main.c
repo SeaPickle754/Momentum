@@ -10,7 +10,7 @@
 /* Main function, called first */
 int main(void)
 {
-    m_StartRender(global_palette);
+    m_StartRender();
     Sprite* oiram_sprite = m_CreateSprite(oiram, 100, 100, true, 27, 16);
     if (oiram_sprite == NULL){
         m_EndRender();
@@ -20,7 +20,7 @@ int main(void)
 
     m_DrawTransparentSprite(oiram_sprite);
 
-    m_FlipBuffer(NULL);
+    m_FlipBuffer(M_DEFAULT_FRAMEBUFFER);
 
 
     while(true){
@@ -61,7 +61,7 @@ int main(void)
         
         m_MoveSprite(oiram_sprite, x, y);
         m_DrawTransparentSprite(oiram_sprite);
-        m_FlipBuffer(NULL);
+        m_FlipBuffer(M_DEFAULT_FRAMEBUFFER);
         }
         
     }

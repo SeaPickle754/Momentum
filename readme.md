@@ -7,7 +7,7 @@ gfx for an easy setup.
 
 ### Newest version:
 After some revisions, I can now display a moving sprite, controled by the keypad. 
-WORK IN PROGRESS: ERROR HANDLING
+WORK IN PROGRESS: TILEMAP
 
 ![Screenshot](screenshot.png)
 

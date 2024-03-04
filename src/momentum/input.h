@@ -7,5 +7,5 @@ void m_ScanKeypresses(){
 }
 
 KEYEVENT m_GetNewestKeypress(){
-    return kb_Data[1];
+    return kb_Data[0];
 }
